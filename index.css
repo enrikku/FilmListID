@@ -83,6 +83,7 @@ body{
     border-radius: 5%;
     justify-content: center;
     transition: 0.5s;
+    cursor: pointer;
 }
 
 #film:hover>#film-image{
@@ -111,7 +112,17 @@ body{
 #film:hover>#text{
     width: 250px;
 }
+.description{
+    width: 90%;
+    display: none;
+    border: white 1px solid;
+    border-radius: 2%;
+    cursor: pointer;
+}
 
+.description h1{
+    margin: 20px;
+}
 
 nav{
     background-color: black;
