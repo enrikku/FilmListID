@@ -30,14 +30,14 @@ document.addEventListener("DOMContentLoaded", () => {
           .then((res) => res.json())
           .then((data) => {
             const rutaImg = data.Poster;
-            const durationFilm = parseInt(data.Runtime.replace(" min", ""));
+            // const durationFilm = parseInt(data.Runtime.replace(" min", ""));
             const total = document.getElementById("total");
             const horas = document.getElementById("horas");
             const rating = data.imdbRating;
 
-            if (!isNaN(durationFilm)) {
-              tiempo = tiempo + durationFilm;
-            }
+            //if (!isNaN(durationFilm)) {
+            //  tiempo = tiempo + durationFilm;
+            // }
 
             divDescription.id = id;
             divDescription.classList = "description"
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             cont++;
             total.textContent = cont;
-            horas.textContent = parseInt(tiempo / 60);
+            // horas.textContent = parseInt(tiempo / 60);
 
             if (cont === lineas.length) 
             {
