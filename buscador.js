@@ -5,6 +5,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     buscador.addEventListener("input", function () {
         const searchTerm = buscador.value.toLowerCase();
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
 
         container.querySelectorAll("#film").forEach(film => {
             const title = film.querySelector("h3").textContent.toLowerCase();
