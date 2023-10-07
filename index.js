@@ -30,14 +30,20 @@ document.addEventListener("DOMContentLoaded", () => {
           .then((res) => res.json())
           .then((data) => {
             const rutaImg = data.Poster;
-            //const durationFilm = parseInt(data.Runtime.replace(" min", ""));
             const total = document.getElementById("total");
             const horas = document.getElementById("horas");
             const rating = data.imdbRating;
 
-            // if (!isNaN(durationFilm)) {
-            //   tiempo = tiempo + durationFilm;
-            // }
+            const durationMatch = data.Runtime.match(/\d+/);
+            const durationFilm = durationMatch ? parseInt(durationMatch[0]) : null;
+
+            if (durationFilm !== null) {
+              // Aquí puedes usar la variable durationFilm que contiene la duración de la película en minutos.
+              tiempo = tiempo + durationFilm;
+            } else {
+              // Maneja el caso en el que no se encuentra una duración válida.
+              console.log("La pelicula --> " + data.Title + " da de resultado data.Runtime N/A")
+            }
 
             divDescription.id = id;
             divDescription.classList = "description";
@@ -67,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             cont++;
             total.textContent = cont;
-            //horas.textContent = parseInt(tiempo / 60);
+            horas.textContent = parseInt(tiempo / 60);
 
             if (cont === lineas.length) {
               var imgs = document.querySelectorAll("#film-image");
