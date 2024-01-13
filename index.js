@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let cont = 0;
   let array = [];
 
+  alert("A");
+
   fetch(archivo)
     .then((response) => response.text())
     .then((contenido) => {
